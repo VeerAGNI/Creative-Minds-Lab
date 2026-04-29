@@ -7,7 +7,19 @@ export const translations = {
     heroTitleLine1: "Creative Minds Lab:",
     heroTitleLine2: "Student-led innovation.",
     heroDescription: "We are a dynamic team of school innovators focused on building sleek, intuitive, and modern digital experiences. Turning our wildest ideas into reality.",
-    heroButton: "See our projects"
+    heroButton: "See our projects",
+    teamTitle: "Meet the Lab",
+    teamSubtitle: "Just three school kids combining our unique skills to build awesome things. We are the creative force behind the lab.",
+    teamVeerName: "Veer",
+    teamVeerRole: "The Builder",
+    teamVeerDesc: "Turning ambitious concepts into clean, functional code. Veer is the technical engine that brings our student-led hacker dreams to reality.",
+    teamChinmayName: "Chinmay",
+    teamChinmayRole: "The Strategist",
+    teamChinmayDesc: "Connecting the dots between a wild idea and a shipped product. Chinmay maps out our master plans and keeps the lab focused on the end goal.",
+    teamArpitName: "Arpit",
+    teamArpitRole: "The Idea Generator",
+    teamArpitDesc: "The creative spark of the group. Arpit is always brainstorming the next big thing, finding unique problems for our student team to solve.",
+    footerCopyright: "Creative Minds Lab. All rights reserved."
   },
   hi: {
     logo: "क्रिएटिव माइंड्स लैब",
@@ -17,6 +29,18 @@ export const translations = {
     heroTitleLine1: "क्रिएटिव माइंड्स लैब:",
     heroTitleLine2: "छात्रों के नेतृत्व में नवाचार।",
     heroDescription: "हम स्कूल के नवाचारों की एक गतिशील टीम हैं जो आकर्षक, सहज और आधुनिक डिजिटल अनुभव बनाने पर केंद्रित हैं। अपने सबसे साहसी विचारों को हकीकत में बदलना।",
-    heroButton: "हमारे प्रोजेक्ट्स देखें"
+    heroButton: "हमारे प्रोजेक्ट्स देखें",
+    teamTitle: "लैब से मिलें",
+    teamSubtitle: "सिर्फ तीन स्कूली बच्चे जो शानदार चीजें बनाने के लिए अपने अद्वितीय कौशल को जोड़ रहे हैं। हम लैब के पीछे की रचनात्मक शक्ति हैं।",
+    teamVeerName: "वीर",
+    teamVeerRole: "निर्माता",
+    teamVeerDesc: "महत्वाकांक्षी अवधारणाओं को स्वच्छ, कार्यात्मक कोड में बदलना। वीर वह तकनीकी इंजन है जो हमारे छात्रों के नेतृत्व वाले हैकर सपनों को हकीकत में लाता है।",
+    teamChinmayName: "चिन्मय",
+    teamChinmayRole: "रणनीतिकार",
+    teamChinmayDesc: "एक बेतहाशा विचार और एक तैयार उत्पाद के बीच की कड़ियों को जोड़ना। चिन्मय हमारी मास्टर योजनाओं का खाका तैयार करते हैं और लैब को अंतिम लक्ष्य पर केंद्रित रखते हैं।",
+    teamArpitName: "अर्पित",
+    teamArpitRole: "विचार जनरेटर",
+    teamArpitDesc: "समूह की रचनात्मक चिंगारी। अर्पित हमेशा अगली बड़ी चीज के बारे में विचार-मंथन करते हैं, हमारी छात्र टीम को हल करने के लिए अनूठी समस्याएं ढूंढते हैं।",
+    footerCopyright: "क्रिएटिव माइंड्स लैब। सर्वाधिकार सुरक्षित।"
   }
 };

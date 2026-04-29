@@ -1,19 +1,25 @@
+'use client';
+
+import { useLanguage } from '@/context/LanguageContext';
+
 export default function Team() {
+  const { t } = useLanguage();
+
   const team = [
     {
-      name: "Veer",
-      role: "The Builder",
-      description: "Turning ambitious concepts into clean, functional code. Veer is the technical engine that brings our student-led hacker dreams to reality."
+      name: t('teamVeerName'),
+      role: t('teamVeerRole'),
+      description: t('teamVeerDesc')
     },
     {
-      name: "Chinmay",
-      role: "The Strategist",
-      description: "Connecting the dots between a wild idea and a shipped product. Chinmay maps out our master plans and keeps the lab focused on the end goal."
+      name: t('teamChinmayName'),
+      role: t('teamChinmayRole'),
+      description: t('teamChinmayDesc')
     },
     {
-      name: "Arpit",
-      role: "The Idea Generator",
-      description: "The creative spark of the group. Arpit is always brainstorming the next big thing, finding unique problems for our student team to solve."
+      name: t('teamArpitName'),
+      role: t('teamArpitRole'),
+      description: t('teamArpitDesc')
     }
   ];
 
@@ -21,9 +27,11 @@ export default function Team() {
     <section className="py-24 px-6 bg-gray-50/50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-black mb-4">Meet the Lab</h2>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-black mb-4">
+            {t('teamTitle')}
+          </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-lg md:text-xl font-light">
-            Just three school kids combining our unique skills to build awesome things. We are the creative force behind the lab.
+            {t('teamSubtitle')}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
