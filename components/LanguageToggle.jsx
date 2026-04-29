@@ -7,7 +7,7 @@ export default function LanguageToggle() {
   return (
     <button
       onClick={toggleLanguage}
-      className="ml-4 text-[10px] font-bold px-2 py-1 border border-gray-200 rounded hover:bg-black hover:text-white hover:border-black transition-all uppercase tracking-widest leading-none"
+      className="text-[10px] font-bold px-2.5 py-1.5 border border-black/10 rounded-md hover:bg-black hover:text-white hover:border-black transition-all uppercase tracking-widest leading-none flex items-center justify-center min-w-[36px] bg-white"
       aria-label="Toggle Language"
     >
       {language === 'en' ? 'HI' : 'EN'}
