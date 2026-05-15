@@ -15,16 +15,22 @@ export default function Header() {
             {t('logo')}
           </Link>
           <nav className="hidden md:flex gap-8 text-sm font-medium text-gray-500 dark:text-gray-400 items-center">
-            <Link href="#work" className="hover:text-black dark:hover:text-white transition-colors">{t('work')}</Link>
-            <Link href="#about" className="hover:text-black dark:hover:text-white transition-colors">{t('about')}</Link>
-            <Link href="#contact" className="hover:text-black dark:hover:text-white transition-colors">{t('contact')}</Link>
+            <Link href="/#work" className="hover:text-black dark:hover:text-white transition-colors">{t('work')}</Link>
+            <Link href="/#about" className="hover:text-black dark:hover:text-white transition-colors">{t('about')}</Link>
+            <Link href="/#contact" className="hover:text-black dark:hover:text-white transition-colors">{t('contact')}</Link>
           </nav>
         </div>
         
         {/* Toggles placed outside hidden nav to guarantee visibility on all screen sizes */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <LanguageToggle />
           <ThemeToggle />
+          <Link 
+            href="/login" 
+            className="text-sm font-medium px-4 py-2 rounded-full bg-black text-white dark:bg-white dark:text-black hover:opacity-90 transition-opacity"
+          >
+            Login
+          </Link>
         </div>
       </div>
     </header>
