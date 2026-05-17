@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  :root, html[data-theme='light'] {
+  :root {
     --color-bg: #ffffff;
     --color-text: #000000;
     --color-primary: #3b82f6;
@@ -15,23 +15,23 @@
     --color-primary: #60a5fa;
   }
 
-  html.dark[data-theme='creator-neon'], html[data-theme='creator-neon'] {
-    --color-bg: #09090b;
-    --color-text: #39ff14;
-    --color-primary: #ff00ff;
+  html.creator-neon, html[data-theme='creator-neon'], .creator-neon {
+    --color-bg: #09090b !important;
+    --color-text: #39ff14 !important;
+    --color-primary: #ff00ff !important;
   }
 
-  html.dark[data-theme='creator-sunset'], html[data-theme='creator-sunset'] {
-    --color-bg: #2d1033;
-    --color-text: #fcd34d;
-    --color-primary: #f97316;
+  html.creator-sunset, html[data-theme='creator-sunset'], .creator-sunset {
+    --color-bg: #2d1033 !important;
+    --color-text: #fcd34d !important;
+    --color-primary: #f97316 !important;
   }
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  @apply antialiased;
+  background-color: var(--color-bg) !important;
+  color: var(--color-text) !important;
+  @apply antialiased transition-colors duration-300;
 }
 
 ::selection {
