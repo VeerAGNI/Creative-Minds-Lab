@@ -34,10 +34,12 @@ export function ThemeProvider({ children }) {
     root.classList.remove('dark');
     root.removeAttribute('data-theme');
 
-    if (newTheme === 'dark') {
+    const darkThemes = ['dark', 'creator-neon', 'creator-sunset'];
+    if (darkThemes.includes(newTheme)) {
       root.classList.add('dark');
-      root.setAttribute('data-theme', 'dark');
-    } else if (newTheme !== 'light') {
+    }
+
+    if (newTheme !== 'light') {
       root.setAttribute('data-theme', newTheme);
     } else {
       root.setAttribute('data-theme', 'light');
@@ -52,8 +54,9 @@ export function ThemeProvider({ children }) {
   };
 
   const toggleTheme = () => {
-    const nextTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(nextTheme);
+    const currentIndex = availableThemes.indexOf(theme);
+    const nextIndex = (currentIndex + 1) % availableThemes.length;
+    setTheme(availableThemes[nextIndex]);
   };
 
   if (!mounted) {
