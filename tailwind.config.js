@@ -12,8 +12,9 @@ module.exports = {
         sans: ['var(--font-inter)', 'sans-serif'],
       },
       colors: {
-        background: '#ffffff',
-        foreground: '#000000',
+        background: 'var(--color-bg, #ffffff)',
+        foreground: 'var(--color-text, #000000)',
+        primary: 'var(--color-primary, #3b82f6)',
       }
     },
   },

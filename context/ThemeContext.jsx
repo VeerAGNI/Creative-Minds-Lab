@@ -2,53 +2,70 @@
 
 import { createContext, useContext, useEffect, useState } from 'react';
 
+const availableThemes = ['light', 'dark', 'creator-neon', 'creator-sunset'];
+
 const ThemeContext = createContext({
   theme: 'light',
+  setTheme: () => null,
   toggleTheme: () => null,
+  availableThemes,
 });
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('light');
+  const [theme, setThemeState] = useState('light');
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
     const stored = localStorage.getItem('theme');
-    if (stored) {
-      setTheme(stored);
-      if (stored === 'dark') {
-        document.documentElement.classList.add('dark');
-      }
+    if (stored && availableThemes.includes(stored)) {
+      setThemeState(stored);
+      applyTheme(stored);
     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
-      document.documentElement.classList.add('dark');
+      setThemeState('dark');
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
     }
   }, []);
 
-  const toggleTheme = () => {
-    if (theme === 'light') {
-      document.documentElement.classList.add('dark');
-      setTheme('dark');
-      localStorage.setItem('theme', 'dark');
+  const applyTheme = (newTheme) => {
+    const root = document.documentElement;
+    root.classList.remove('dark');
+    root.removeAttribute('data-theme');
+
+    if (newTheme === 'dark') {
+      root.classList.add('dark');
+      root.setAttribute('data-theme', 'dark');
+    } else if (newTheme !== 'light') {
+      root.setAttribute('data-theme', newTheme);
     } else {
-      document.documentElement.classList.remove('dark');
-      setTheme('light');
-      localStorage.setItem('theme', 'light');
+      root.setAttribute('data-theme', 'light');
     }
   };
 
-  // Prevent hydration mismatch by returning empty-ish context wrapper initially if needed,
-  // but since we only toggle client-side, we render after mount check for safety.
+  const setTheme = (newTheme) => {
+    if (!availableThemes.includes(newTheme)) return;
+    setThemeState(newTheme);
+    localStorage.setItem('theme', newTheme);
+    applyTheme(newTheme);
+  };
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(nextTheme);
+  };
+
   if (!mounted) {
     return (
-      <ThemeContext.Provider value={{ theme: 'light', toggleTheme }}>
+      <ThemeContext.Provider value={{ theme: 'light', setTheme, toggleTheme, availableThemes }}>
         {children}
       </ThemeContext.Provider>
     );
   }
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme, availableThemes }}>
       {children}
     </ThemeContext.Provider>
   );
