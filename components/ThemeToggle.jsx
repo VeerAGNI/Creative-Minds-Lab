@@ -7,7 +7,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full border border-primary text-primary bg-background hover:bg-primary hover:text-background transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background z-50 cursor-pointer flex items-center justify-center w-10 h-10 shadow-sm"
+      className="p-2 rounded-full border border-[var(--color-primary)] text-[var(--color-primary)] bg-[var(--color-bg)] hover:bg-[var(--color-primary)] hover:text-[var(--color-bg)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2 focus:ring-offset-[var(--color-bg)] z-50 cursor-pointer flex items-center justify-center w-10 h-10 shadow-sm"
       aria-label="Toggle Theme"
       title={`Current Theme: ${theme.replace('creator-', '')}`}
     >

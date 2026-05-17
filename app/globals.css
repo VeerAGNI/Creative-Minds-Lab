@@ -29,5 +29,12 @@
 }
 
 body {
-  @apply bg-background text-foreground antialiased selection:bg-primary selection:text-background;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  @apply antialiased;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
 }
